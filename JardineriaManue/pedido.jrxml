@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Cherry" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="13acf49e-4913-4d1b-bccc-113817ad15d1">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DataAdapter.xml"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<subDataset name="Dataset1" uuid="a2a532b0-5877-4ff6-ba3c-f810677dc23a">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DataAdapter.xml"/>
+		<queryString language="SQL">
+			<![CDATA[SELECT cliente.codigo_cliente, cliente.nombre_cliente, cliente.telefono, pedido.fecha_pedido, pedido.fecha_esperada, pedido.estado, pedido.comentarios FROM jardineria.pedido, jardineria.cliente where fecha_esperada
+ like "2009-01-%%" and fecha_entrega is null;]]>
+		</queryString>
+		<field name="codigo_cliente" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="codigo_cliente"/>
+			<property name="com.jaspersoft.studio.field.label" value="codigo_cliente"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="cliente"/>
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="nombre_cliente" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="nombre_cliente"/>
+			<property name="com.jaspersoft.studio.field.label" value="nombre_cliente"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="cliente"/>
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="telefono" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="telefono"/>
+			<property name="com.jaspersoft.studio.field.label" value="telefono"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="cliente"/>
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="fecha_pedido" class="java.sql.Date">
+			<property name="com.jaspersoft.studio.field.name" value="fecha_pedido"/>
+			<property name="com.jaspersoft.studio.field.label" value="fecha_pedido"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="pedido"/>
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="fecha_esperada" class="java.sql.Date">
+			<property name="com.jaspersoft.studio.field.name" value="fecha_esperada"/>
+			<property name="com.jaspersoft.studio.field.label" value="fecha_esperada"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="pedido"/>
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="estado" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="estado"/>
+			<property name="com.jaspersoft.studio.field.label" value="estado"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="pedido"/>
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="comentarios" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="comentarios"/>
+			<property name="com.jaspersoft.studio.field.label" value="comentarios"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="pedido"/>
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<group name="codigo_cliente">
+			<groupExpression><![CDATA[$F{codigo_cliente}]]></groupExpression>
+		</group>
+		<group name="nombre_cliente">
+			<groupExpression><![CDATA[$F{nombre_cliente}]]></groupExpression>
+		</group>
+		<group name="telefono">
+			<groupExpression><![CDATA[$F{telefono}]]></groupExpression>
+		</group>
+		<group name="fecha_pedido">
+			<groupExpression><![CDATA[$F{fecha_pedido}]]></groupExpression>
+		</group>
+		<group name="fecha_esperada">
+			<groupExpression><![CDATA[$F{fecha_esperada}]]></groupExpression>
+		</group>
+		<group name="estado">
+			<groupExpression><![CDATA[$F{estado}]]></groupExpression>
+		</group>
+		<group name="comentarios">
+			<groupExpression><![CDATA[$F{comentarios}]]></groupExpression>
+		</group>
+	</subDataset>
+	<queryString language="SQL">
+		<![CDATA[SELECT cliente.codigo_cliente, cliente.nombre_cliente, cliente.telefono, pedido.fecha_pedido, pedido.fecha_esperada, pedido.estado, pedido.comentarios FROM jardineria.pedido, jardineria.cliente where fecha_esperada
+ like "2009-01-%%" and fecha_entrega is null;]]>
+	</queryString>
+	<field name="codigo_cliente" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="codigo_cliente"/>
+		<property name="com.jaspersoft.studio.field.label" value="codigo_cliente"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cliente"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombre_cliente" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nombre_cliente"/>
+		<property name="com.jaspersoft.studio.field.label" value="nombre_cliente"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cliente"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telefono" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="telefono"/>
+		<property name="com.jaspersoft.studio.field.label" value="telefono"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cliente"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fecha_pedido" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="fecha_pedido"/>
+		<property name="com.jaspersoft.studio.field.label" value="fecha_pedido"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pedido"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fecha_esperada" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="fecha_esperada"/>
+		<property name="com.jaspersoft.studio.field.label" value="fecha_esperada"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pedido"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="estado" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="estado"/>
+		<property name="com.jaspersoft.studio.field.label" value="estado"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pedido"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="comentarios" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="comentarios"/>
+		<property name="com.jaspersoft.studio.field.label" value="comentarios"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pedido"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="Group1">
+		<groupExpression><![CDATA[$F{codigo_cliente}]]></groupExpression>
+		<groupHeader>
+			<band height="37">
+				<frame>
+					<reportElement mode="Opaque" x="0" y="7" width="555" height="24" forecolor="#B89F7D" backcolor="#000000" uuid="0a5fc4ac-2e39-4b7a-8f96-59f8eb2df66d"/>
+					<textField textAdjust="StretchHeight">
+						<reportElement style="SubTitle" isPrintRepeatedValues="false" x="120" y="0" width="148" height="24" forecolor="#FFFFFF" uuid="4fbebfd3-a184-45af-b7d9-5c3faaf087b5"/>
+						<textElement>
+							<font isBold="false"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{codigo_cliente}]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement positionType="Float" x="290" y="0" width="140" height="26" forecolor="#FCFCFC" uuid="539b4cf8-ac6d-4bf8-ae91-63f3d4149f2d"/>
+						<textElement>
+							<font fontName="Times New Roman" size="16" isBold="false"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{nombre_cliente}]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement positionType="Float" x="455" y="0" width="100" height="26" forecolor="#FCFCFC" uuid="539b4cf8-ac6d-4bf8-ae91-63f3d4149f2d"/>
+						<textElement>
+							<font fontName="Times New Roman" size="16" isBold="false"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{telefono}]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="2" y="0" width="100" height="30" forecolor="#FCFCFC" uuid="39c9e3ed-3fce-4eef-afd5-5f725cd79d73"/>
+						<textElement>
+							<font size="12"/>
+						</textElement>
+						<text><![CDATA[CLIENTE:]]></text>
+					</staticText>
+				</frame>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="6"/>
+		</groupFooter>
+	</group>
+	<group name="Group2">
+		<groupExpression><![CDATA[$F{nombre_cliente}]]></groupExpression>
+		<groupHeader>
+			<band height="42">
+				<staticText>
+					<reportElement x="0" y="4" width="120" height="30" uuid="9c1b43ce-fb46-4697-92ae-7c3562d557e2"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[FECHA DEL PEDIDO:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="140" y="4" width="100" height="30" uuid="18d91d83-afb5-40b8-9436-043db16a604c"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[FECHA ESPERADA:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="290" y="4" width="116" height="28" uuid="ffa8a973-9548-4c96-8c8c-76d900e098d0"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[ESTADO DEL PEDIDO:]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="Group3">
+		<groupExpression><![CDATA[$F{fecha_pedido}]]></groupExpression>
+		<groupHeader>
+			<band height="30">
+				<textField>
+					<reportElement positionType="Float" x="0" y="4" width="140" height="26" forecolor="#000000" uuid="539b4cf8-ac6d-4bf8-ae91-63f3d4149f2d"/>
+					<textElement>
+						<font fontName="Times New Roman" size="16" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{fecha_pedido}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement positionType="Float" x="140" y="4" width="150" height="26" forecolor="#000000" uuid="539b4cf8-ac6d-4bf8-ae91-63f3d4149f2d"/>
+					<textElement>
+						<font fontName="Times New Roman" size="16" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{fecha_esperada}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement positionType="Float" x="290" y="4" width="101" height="26" forecolor="#000000" uuid="539b4cf8-ac6d-4bf8-ae91-63f3d4149f2d"/>
+					<textElement>
+						<font fontName="Times New Roman" size="16" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{estado}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="Group4">
+		<groupExpression><![CDATA[$F{estado}]]></groupExpression>
+		<groupHeader>
+			<band height="30"/>
+		</groupHeader>
+	</group>
+	<group name="Group5">
+		<groupExpression><![CDATA[$F{codigo_cliente}]]></groupExpression>
+		<groupHeader>
+			<band height="29"/>
+		</groupHeader>
+		<groupFooter>
+			<band height="6"/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="132" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="95" backcolor="#000000" uuid="6c6ca4e1-17cd-4913-93d6-5e670ea9ae8a"/>
+				<staticText>
+					<reportElement style="Title" x="0" y="0" width="555" height="66" uuid="a2a2cac8-5a7d-4487-8c54-dab235ce4e21"/>
+					<textElement textAlignment="Center">
+						<font isBold="false"/>
+					</textElement>
+					<text><![CDATA[PEDIDOS]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="SubTitle" x="-1" y="66" width="556" height="29" uuid="8978eac3-c578-41c9-837e-48d2b0184642"/>
+					<textElement textAlignment="Center">
+						<font size="18" isBold="false"/>
+					</textElement>
+					<text><![CDATA[PEDIDOS ENERO 2009 SIN FECHA ENTREGA]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement mode="Opaque" x="0" y="100" width="555" height="32" forecolor="#000000" backcolor="#15BF53" uuid="e3c14156-5b51-4201-918b-97fdc012e5d4"/>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement x="307" y="12" width="144" height="20" forecolor="#FFFFFF" uuid="5c3301e7-a737-4c59-8a2f-a6c79fd1adb8"/>
+					<textElement textAlignment="Right">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="26" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="18" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="555" height="18" uuid="b50221b5-8254-440b-8c6f-1f0b138c9259"/>
+				<textField>
+					<reportElement positionType="Float" x="-1" y="-57" width="556" height="26" forecolor="#000000" uuid="539b4cf8-ac6d-4bf8-ae91-63f3d4149f2d"/>
+					<textElement>
+						<font fontName="Times New Roman" size="16" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{comentarios}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="7" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="1133a906-5b71-476e-9f3e-bc97c97058c1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="1" width="555" height="24" forecolor="#D0B48E" backcolor="#000000" uuid="729c3539-f946-4d0e-a0a7-bda2815ea1b0"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="513" y="0" width="40" height="20" forecolor="#FFFFFF" uuid="4834e99c-7f6c-485a-b098-50e5187f2ab4"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="433" y="0" width="80" height="20" forecolor="#FFFFFF" uuid="9825b46e-76f1-469a-abb8-a1cc27aad685"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="2" y="1" width="197" height="20" forecolor="#FFFFFF" uuid="137d38c7-1a83-4fc5-b156-9d5f1b1a0ddc"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
